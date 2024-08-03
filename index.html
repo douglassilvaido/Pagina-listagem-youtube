@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/style.css" />
+    <link rel="stylesheet" href="/src/global.css" />
+    <script defer src="/src/index.js"></script>
+    <title>Youtube-listagem</title>
+</head>
+
+<body>
+    <header>
+        <div id="start-header">
+            <div id="button-menu" class=" itens-header" onclick="apareceModal()">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 12H21" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M3 6H21" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M3 18H21" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </div>
+            <div class="logo-ytb itens-header">
+                <img src="/docs/imgs/youtube 1.svg" alt="" />
+            </div>
+        </div>
+        <div id="middle-header">
+            <div class="search">
+                <div class="area-search">
+                    <input type="text" placeholder="Pesquisar" class="input-search" />
+                </div>
+                <button class="button-search itens-header">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z"
+                            stroke="black" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M21 21L16.65 16.65" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div id="end-header">
+            <div class="buttons-end">
+                <div id="create" class="itens-end itens-header">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-arrow-up" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5" />
+                    </svg>
+                </div>
+                <div id="notification" class="itens-end itens-header">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M18 8C18 6.4087 17.3679 4.88258 16.2426 3.75736C15.1174 2.63214 13.5913 2 12 2C10.4087 2 8.88258 2.63214 7.75736 3.75736C6.63214 4.88258 6 6.4087 6 8C6 15 3 17 3 17H21C21 17 18 15 18 8Z"
+                            stroke="black" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                            d="M13.73 21C13.5542 21.3031 13.3019 21.5547 12.9982 21.7295C12.6946 21.9044 12.3504 21.9965 12 21.9965C11.6496 21.9965 11.3054 21.9044 11.0018 21.7295C10.6982 21.5547 10.4458 21.3031 10.27 21"
+                            stroke="black" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <div id="info-canal ">
+                    <div id="perfil" class="perfil-on itens-end itens-header">
+                        <img src="/docs/imgs/foto gata.jpg" alt="photo-perfil" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <aside id="modal-menu" class="modal show">
+        <ul class="list-menu">
+            <li class="itens-list">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-house-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z" />
+                    <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293z" />
+                </svg>
+                <p>Início</p>
+            </li>
+            <li class="itens-list">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-compass"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M8 16.016a7.5 7.5 0 0 0 1.962-14.74A1 1 0 0 0 9 0H7a1 1 0 0 0-.962 1.276A7.5 7.5 0 0 0 8 16.016m6.5-7.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0" />
+                    <path d="m6.94 7.44 4.95-2.83-2.83 4.95-4.949 2.83 2.828-4.95z" />
+                </svg>
+                <p>Explorar</p>
+            </li>
+            <li class="itens-list">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-youtube"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z" />
+                </svg>
+                <p>Inscrições</p>
+            </li>
+            <div style="width: 100%; border: 1px solid; margin: 5px 0"></div>
+            <li class="itens-list">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-vinyl"
+                    viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                    <path d="M8 6a2 2 0 1 0 0 4 2 2 0 0 0 0-4M4 8a4 4 0 1 1 8 0 4 4 0 0 1-8 0" />
+                    <path d="M9 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0" />
+                </svg>
+                <p>Música</p>
+            </li>
+            <li class="itens-list">
+                <svg width="20" height="20" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M6 21H3C2.46957 21 1.96086 20.7893 1.58579 20.4142C1.21071 20.0391 1 19.5304 1 19V12C1 11.4696 1.21071 10.9609 1.58579 10.5858C1.96086 10.2107 2.46957 10 3 10H6M13 8V4C13 3.20435 12.6839 2.44129 12.1213 1.87868C11.5587 1.31607 10.7956 1 10 1L6 10V21H17.28C17.7623 21.0055 18.2304 20.8364 18.5979 20.524C18.9654 20.2116 19.2077 19.7769 19.28 19.3L20.66 10.3C20.7035 10.0134 20.6842 9.72068 20.6033 9.44225C20.5225 9.16382 20.3821 8.90629 20.1919 8.68751C20.0016 8.46873 19.7661 8.29393 19.5016 8.17522C19.2371 8.0565 18.9499 7.99672 18.66 8H13Z"
+                        stroke="black" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+
+                <p>Videos que gostei</p>
+            </li>
+            <li class="itens-list">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-stopwatch" viewBox="0 0 16 16">
+                    <path d="M8.5 5.6a.5.5 0 1 0-1 0v2.9h-3a.5.5 0 0 0 0 1H8a.5.5 0 0 0 .5-.5z" />
+                    <path
+                        d="M6.5 1A.5.5 0 0 1 7 .5h2a.5.5 0 0 1 0 1v.57c1.36.196 2.594.78 3.584 1.64l.012-.013.354-.354-.354-.353a.5.5 0 0 1 .707-.708l1.414 1.415a.5.5 0 1 1-.707.707l-.353-.354-.354.354-.013.012A7 7 0 1 1 7 2.071V1.5a.5.5 0 0 1-.5-.5M8 3a6 6 0 1 0 .001 12A6 6 0 0 0 8 3" />
+                </svg>
+                <p>Assistir mais tarde</p>
+            </li>
+            <li class="itens-list">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15"
+                        stroke="black" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M7 10L12 15L17 10" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M12 15V3" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+
+                <p>Downloads</p>
+            </li>
+            <li class="itens-list">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2h2zm-2 3v2h2v-2zm2 3h-2v2h2z" />
+                </svg>
+                <p>Filmes</p>
+            </li>
+            <li class="itens-list">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-backpack-fill" viewBox="0 0 16 16">
+                    <path d="M5 13v-3h4v.5a.5.5 0 0 0 1 0V10h1v3z" />
+                    <path
+                        d="M6 2v.341C3.67 3.165 2 5.388 2 8v5.5A2.5 2.5 0 0 0 4.5 16h7a2.5 2.5 0 0 0 2.5-2.5V8a6 6 0 0 0-4-5.659V2a2 2 0 1 0-4 0m2-1a1 1 0 0 1 1 1v.083a6 6 0 0 0-2 0V2a1 1 0 0 1 1-1m0 3a4 4 0 0 1 3.96 3.43.5.5 0 1 1-.99.14 3 3 0 0 0-5.94 0 .5.5 0 1 1-.99-.14A4 4 0 0 1 8 4M4.5 9h7a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5v-4a.5.5 0 0 1 .5-.5" />
+                </svg>
+                <p>Aprender</p>
+            </li>
+            <li class="itens-list">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-award-fill" viewBox="0 0 16 16">
+                    <path
+                        d="m8 0 1.669.864 1.858.282.842 1.68 1.337 1.32L13.4 6l.306 1.854-1.337 1.32-.842 1.68-1.858.282L8 12l-1.669-.864-1.858-.282-.842-1.68-1.337-1.32L2.6 6l-.306-1.854 1.337-1.32.842-1.68L6.331.864z" />
+                    <path d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1z" />
+                </svg>
+                <p>Esportes</p>
+            </li>
+        </ul>
+    </aside>
+    <main>
+        <div class="content">
+            <div class="list-videos">
+                <div class="suggested-video">
+                    <div class="img-suggested-video">
+                        <img src="/docs/imgs/Thumb 1.png" alt="" />
+                    </div>
+                    <div class="data-videos-geral">
+                        <div class="logo-canal">
+                            <img src="/docs/imgs/Channel Avatar.png" alt="" />
+                        </div>
+                        <div class="data-videos">
+                            <div class="title-videos">
+                                <h5>Geração Tech Unimed - BH - Ciência de dados</h5>
+                            </div>
+                            <div class="info-videos">
+                                <p class="total-view">2,1 mil Vizualizações</p>
+                                <p class="moment-posted">Transmitido à 2 dias</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="suggested-video">
+                    <div class="img-suggested-video">
+                        <img src="/docs/imgs/Thumb 2.png" alt="" />
+                    </div>
+                    <div class="data-videos-geral">
+                        <div class="logo-canal">
+                            <img src="/docs/imgs/Channel Avatar.png" alt="" />
+                        </div>
+                        <div class="data-videos">
+                            <div class="title-videos">
+                                <h5>Geração Tech Unimed - BH - Ciência de dados</h5>
+                            </div>
+                            <div class="info-videos">
+                                <p class="total-view">2,1 mil Vizualizações</p>
+                                <p class="moment-posted">Transmitido à 2 dias</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="suggested-video">
+                    <div class="img-suggested-video">
+                        <img src="/docs/imgs/image 13.png" alt="" />
+                    </div>
+                    <div class="data-videos-geral">
+                        <div class="logo-canal">
+                            <img src="/docs/imgs/Channel Avatar.png" alt="" />
+                        </div>
+                        <div class="data-videos">
+                            <div class="title-videos">
+                                <h5>Geração Tech Unimed - BH - Ciência de dados</h5>
+                            </div>
+                            <div class="info-videos">
+                                <p class="total-view">2,1 mil Vizualizações</p>
+                                <p class="moment-posted">Transmitido à 2 dias</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="suggested-video">
+                    <div class="img-suggested-video">
+                        <img src="/docs/imgs/image 14.png" alt="" />
+                    </div>
+                    <div class="data-videos-geral">
+                        <div class="logo-canal">
+                            <img src="/docs/imgs/Channel Avatar.png" alt="" />
+                        </div>
+                        <div class="data-videos">
+                            <div class="title-videos">
+                                <h5>Geração Tech Unimed - BH - Ciência de dados</h5>
+                            </div>
+                            <div class="info-videos">
+                                <p class="total-view">2,1 mil Vizualizações</p>
+                                <p class="moment-posted">Transmitido à 2 dias</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="suggested-video">
+                    <div class="img-suggested-video">
+                        <img src="/docs/imgs/image 15.png" alt="" />
+                    </div>
+                    <div class="data-videos-geral">
+                        <div class="logo-canal">
+                            <img src="/docs/imgs/Channel Avatar.png" alt="" />
+                        </div>
+                        <div class="data-videos">
+                            <div class="title-videos">
+                                <h5>Geração Tech Unimed - BH - Ciência de dados</h5>
+                            </div>
+                            <div class="info-videos">
+                                <p class="total-view">2,1 mil Vizualizações</p>
+                                <p class="moment-posted">Transmitido à 2 dias</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="suggested-video">
+                    <div class="img-suggested-video">
+                        <img src="/docs/imgs/Thumb 1.png" alt="" />
+                    </div>
+                    <div class="data-videos-geral">
+                        <div class="logo-canal">
+                            <img src="/docs/imgs/Channel Avatar.png" alt="" />
+                        </div>
+                        <div class="data-videos">
+                            <div class="title-videos">
+                                <h5>Geração Tech Unimed - BH - Ciência de dados</h5>
+                            </div>
+                            <div class="info-videos">
+                                <p class="total-view">2,1 mil Vizualizações</p>
+                                <p class="moment-posted">Transmitido à 2 dias</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="suggested-video">
+                    <div class="img-suggested-video">
+                        <img src="/docs/imgs/Thumb 2.png" alt="" />
+                    </div>
+                    <div class="data-videos-geral">
+                        <div class="logo-canal">
+                            <img src="/docs/imgs/Channel Avatar.png" alt="" />
+                        </div>
+                        <div class="data-videos">
+                            <div class="title-videos">
+                                <h5>Geração Tech Unimed - BH - Ciência de dados</h5>
+                            </div>
+                            <div class="info-videos">
+                                <p class="total-view">2,1 mil Vizualizações</p>
+                                <p class="moment-posted">Transmitido à 2 dias</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="suggested-video">
+                    <div class="img-suggested-video">
+                        <img src="/docs/imgs/image 13.png" alt="" />
+                    </div>
+                    <div class="data-videos-geral">
+                        <div class="logo-canal">
+                            <img src="/docs/imgs/Channel Avatar.png" alt="" />
+                        </div>
+                        <div class="data-videos">
+                            <div class="title-videos">
+                                <h5>Geração Tech Unimed - BH - Ciência de dados</h5>
+                            </div>
+                            <div class="info-videos">
+                                <p class="total-view">2,1 mil Vizualizações</p>
+                                <p class="moment-posted">Transmitido à 2 dias</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="suggested-video">
+                    <div class="img-suggested-video">
+                        <img src="/docs/imgs/image 14.png" alt="" />
+                    </div>
+                    <div class="data-videos-geral">
+                        <div class="logo-canal">
+                            <img src="/docs/imgs/Channel Avatar.png" alt="" />
+                        </div>
+                        <div class="data-videos">
+                            <div class="title-videos">
+                                <h5>Geração Tech Unimed - BH - Ciência de dados</h5>
+                            </div>
+                            <div class="info-videos">
+                                <p class="total-view">2,1 mil Vizualizações</p>
+                                <p class="moment-posted">Transmitido à 2 dias</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="suggested-video">
+                    <div class="img-suggested-video">
+                        <img src="/docs/imgs/image 15.png" alt="" />
+                    </div>
+                    <div class="data-videos-geral">
+                        <div class="logo-canal">
+                            <img src="/docs/imgs/Channel Avatar.png" alt="" />
+                        </div>
+                        <div class="data-videos">
+                            <div class="title-videos">
+                                <h5>Geração Tech Unimed - BH - Ciência de dados</h5>
+                            </div>
+                            <div class="info-videos">
+                                <p class="total-view">2,1 mil Vizualizações</p>
+                                <p class="moment-posted">Transmitido à 2 dias</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="suggested-video">
+                    <div class="img-suggested-video">
+                        <img src="/docs/imgs/Thumb 1.png" alt="" />
+                    </div>
+                    <div class="data-videos-geral">
+                        <div class="logo-canal">
+                            <img src="/docs/imgs/Channel Avatar.png" alt="" />
+                        </div>
+                        <div class="data-videos">
+                            <div class="title-videos">
+                                <h5>Geração Tech Unimed - BH - Ciência de dados</h5>
+                            </div>
+                            <div class="info-videos">
+                                <p class="total-view">2,1 mil Vizualizações</p>
+                                <p class="moment-posted">Transmitido à 2 dias</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="suggested-video">
+                    <div class="img-suggested-video">
+                        <img src="/docs/imgs/Thumb 2.png" alt="" />
+                    </div>
+                    <div class="data-videos-geral">
+                        <div class="logo-canal">
+                            <img src="/docs/imgs/Channel Avatar.png" alt="" />
+                        </div>
+                        <div class="data-videos">
+                            <div class="title-videos">
+                                <h5>Geração Tech Unimed - BH - Ciência de dados</h5>
+                            </div>
+                            <div class="info-videos">
+                                <p class="total-view">2,1 mil Vizualizações</p>
+                                <p class="moment-posted">Transmitido à 2 dias</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="suggested-video">
+                    <div class="img-suggested-video">
+                        <img src="/docs/imgs/image 13.png" alt="" />
+                    </div>
+                    <div class="data-videos-geral">
+                        <div class="logo-canal">
+                            <img src="/docs/imgs/Channel Avatar.png" alt="" />
+                        </div>
+                        <div class="data-videos">
+                            <div class="title-videos">
+                                <h5>Geração Tech Unimed - BH - Ciência de dados</h5>
+                            </div>
+                            <div class="info-videos">
+                                <p class="total-view">2,1 mil Vizualizações</p>
+                                <p class="moment-posted">Transmitido à 2 dias</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="suggested-video">
+                    <div class="img-suggested-video">
+                        <img src="/docs/imgs/image 14.png" alt="" />
+                    </div>
+                    <div class="data-videos-geral">
+                        <div class="logo-canal">
+                            <img src="/docs/imgs/Channel Avatar.png" alt="" />
+                        </div>
+                        <div class="data-videos">
+                            <div class="title-videos">
+                                <h5>Geração Tech Unimed - BH - Ciência de dados</h5>
+                            </div>
+                            <div class="info-videos">
+                                <p class="total-view">2,1 mil Vizualizações</p>
+                                <p class="moment-posted">Transmitido à 2 dias</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="suggested-video">
+                    <div class="img-suggested-video">
+                        <img src="/docs/imgs/image 15.png" alt="" />
+                    </div>
+                    <div class="data-videos-geral">
+                        <div class="logo-canal">
+                            <img src="/docs/imgs/Channel Avatar.png" alt="" />
+                        </div>
+                        <div class="data-videos">
+                            <div class="title-videos">
+                                <h5>Geração Tech Unimed - BH - Ciência de dados</h5>
+                            </div>
+                            <div class="info-videos">
+                                <p class="total-view">2,1 mil Vizualizações</p>
+                                <p class="moment-posted">Transmitido à 2 dias</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
